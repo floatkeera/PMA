@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">PMA</string>
+    <string name="title_activity_menu" translatable="false">MenuActivity</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="facebook_app_id" translatable="false">832744876887767</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb832744876887767</string>
+
+
+    <string name="Login">Log in</string>
+    <string name="Register">Register</string>
+
+
+
+
+    <string-array name="Profile1">
+        <item name="change_pw">Change Password</item>
+        <item name="editpf">Edit profile</item>
+    </string-array>
+    <string name="skiplogin">Skip login, shop now! ></string>
+    <string name="welcome">Welcome to the Store.</string>
+    <string name="welcomepromotion">The New OnePlus 5.\nDual Camera, Clearer Photos.</string>
+</resources>

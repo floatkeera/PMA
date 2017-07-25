@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PMA</string>
+    <string name="action_settings">การตั้งค่า</string>
+    <string name="Login">เข้าสู่ระบบ</string>
+    <string name="Register">ลงทะเบียน</string>
+    <string name="skiplogin">ข้ามไปก่อน ช้อปเลย! ></string>
+    <string name="welcome">ยินดีต้อนรับสู่ร้านค้า</string>
+    <string name="welcomepromotion">OnePlus 5 ใหม่\nพร้อมแล้วให้คุณครอบครอง</string>
+</resources>

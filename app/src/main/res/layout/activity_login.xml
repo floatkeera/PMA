@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+
+    tools:context="com.teephopk.pma.LoginActivity">
+
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <com.teephopk.pma.CustomButton
+        android:text="@string/Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fblogin_button"
+        android:layout_alignRight="@+id/fblogin_button"
+        android:id="@+id/btnRegister"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/md_grey_300"
+
+        android:textSize="24sp"
+
+        android:textAllCaps="false"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/btnSkip"
+        android:layout_centerHorizontal="true" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/fblogin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2"
+        android:layout_marginBottom="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        android:layout_above="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-light"
+        />
+
+    <com.teephopk.pma.CustomButton
+        android:text="@string/Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fblogin_button"
+        android:layout_alignRight="@+id/fblogin_button"
+        android:id="@+id/btnLogin"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/md_white_1000"
+        android:textSize="24sp"
+        android:textAllCaps="false"
+        android:layout_above="@+id/btnRegister"
+        android:layout_centerHorizontal="true" />
+
+    <com.teephopk.pma.CustomButton
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnSkip"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/md_white_1000"
+        android:text = "@string/skiplogin"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:textStyle="italic"
+        />
+
+    <com.teephopk.pma.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/fblogin_button"
+        android:text = "@string/welcome"
+        android:textSize="36sp"
+        android:layout_marginBottom="25dp"
+        android:textStyle="italic"
+        android:textAlignment="center" />
+
+    <com.teephopk.pma.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:text = "@string/welcomepromotion"
+        android:textSize="20sp"
+        android:layout_marginTop="14dp"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:id = "@+id/txtWelcomePromo"
+        android:layout_below="@+id/youtube_view"
+        android:layout_alignLeft="@+id/fblogin_button"
+        android:layout_alignRight="@+id/fblogin_button"
+
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:src="@drawable/ic_new_releases_red_24dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:layout_alignTop="@+id/txtWelcomePromo"
+        android:layout_alignParentLeft="true"
+        android:id = "@+id/icon_promo"/>
+
+
+</RelativeLayout>

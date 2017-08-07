@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+
+    tools:context="com.teephopk.pma.RegisterActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+
+        android:theme="@style/ToolbarThemeWhite">
+
+        <com.teephopk.pma.CustomTitleTextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/md_white_1000"
+            android:textSize="24sp"
+            android:textStyle="normal" />
+    </android.support.v7.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/register_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="30dp"
+        android:visibility="gone" />
+
+    <com.teephopk.pma.CustomTitleTextView
+        android:id="@+id/txtRegistering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/registering"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/registerform"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+            <com.teephopk.pma.CustomTextInputLayout
+                android:id="@+id/nameinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:hintTextAppearance="@style/TextLabel">
+
+                <com.teephopk.pma.CustomEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_name"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/email"
+                    android:inputType="textCapWords" />
+
+            </com.teephopk.pma.CustomTextInputLayout>
+
+            <com.teephopk.pma.CustomTextInputLayout
+                android:id="@+id/emailinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <com.teephopk.pma.CustomEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/password" />
+
+            </com.teephopk.pma.CustomTextInputLayout>
+
+
+            <com.teephopk.pma.CustomTextInputLayout
+                android:id="@+id/passwordinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <com.teephopk.pma.CustomEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_password"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/repeatpassword" />
+
+            </com.teephopk.pma.CustomTextInputLayout>
+
+
+            <com.teephopk.pma.CustomTextInputLayout
+                android:id="@+id/repeatpasswordinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <com.teephopk.pma.CustomEditText
+                    android:id="@+id/repeatpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_verifypassword"
+
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+
+                    android:maxLines="1"
+                    android:nextFocusDown="@+id/datetxt"
+                    android:singleLine="true" />
+
+
+            </com.teephopk.pma.CustomTextInputLayout>
+
+            <com.teephopk.pma.CustomTextInputLayout
+                android:id="@+id/dateinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <com.teephopk.pma.CustomEditText
+                    android:id="@+id/datetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:hint="@string/date"
+                    android:imeActionId="@+id/login"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="none"
+                    android:maxLines="1"
+
+                    android:singleLine="true" />
+
+            </com.teephopk.pma.CustomTextInputLayout>
+
+            <com.teephopk.pma.CustomButton
+                android:id="@+id/email_register_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/action_register"
+                android:textAllCaps="false"
+                android:textColor="@color/md_white_1000"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <com.teephopk.pma.CustomButton
+                android:id="@+id/btnSkipregsitration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/md_grey_300"
+                android:text="@string/action_skipregistration"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
+

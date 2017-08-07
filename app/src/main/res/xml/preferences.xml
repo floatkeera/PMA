@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.teephopk.pma.CustomPreferenceCategory
+        android:title="@string/notifications"
+        android:key="notifications">
+
+        <com.teephopk.pma.CustomSwitchPreference
+            android:title="@string/notifications"
+            android:key="NOTIFICATIONS"
+            android:summary="@string/pushnotifsummary"
+            android:defaultValue="false"/>
+
+
+        <com.teephopk.pma.CustomSwitchPreference
+            android:title="@string/sound"
+            android:key="SOUND"
+            android:dependency="NOTIFICATIONS"
+            android:defaultValue="false"/>
+
+        <com.teephopk.pma.CustomSwitchPreference
+            android:title="@string/vibrate"
+            android:key="VIBRATE"
+            android:dependency="NOTIFICATIONS"
+            android:defaultValue="false"/>
+
+
+
+
+    </com.teephopk.pma.CustomPreferenceCategory>
+
+</PreferenceScreen>

@@ -39,20 +39,20 @@ public class CustomTextView extends TextView {
 
     private Typeface selectTypeface(Context context, int textStyle) {
         /*
-        * information about the TextView textStyle:
+        * information about the TextView textStyle:\
         * http://developer.android.com/reference/android/R.styleable.html#TextView_textStyle
         */
 
         if(Locale.getDefault().getLanguage().equals("th")){
             switch (textStyle) {
                 case Typeface.BOLD: // bold
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/Kanit-Medium.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/Umpush-Bold.ttf");
                 case Typeface.NORMAL: // regular
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/Kanit-Light.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/Umpush-Book.ttf");
                 case Typeface.ITALIC: // light
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/Kanit-ExtraLight.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/Umpush-Light.ttf");
                 default:
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/Kanit-Light.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/Umpush-Book.ttf");
             }
         }else{
             switch (textStyle) {

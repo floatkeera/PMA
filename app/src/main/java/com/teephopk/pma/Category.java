@@ -12,5 +12,8 @@ public class Category {
 
     public Category(){
         //Empty constructor for Firebase
+
+
+
     }
 }

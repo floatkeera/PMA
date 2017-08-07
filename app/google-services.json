@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "291033230297",
+    "firebase_url": "https://product-management-f8a44.firebaseio.com",
+    "project_id": "product-management-f8a44",
+    "storage_bucket": "product-management-f8a44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291033230297:android:f3376406b4cac18f",
+        "android_client_info": {
+          "package_name": "com.teephopk.pma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291033230297-nqpu4asacd7k9rvjhmpjc6c0rkuhs5p6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIzCQYt-52mbDgP_NYvu8fEGyz64hq6CU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

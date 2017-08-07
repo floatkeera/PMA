@@ -55,13 +55,13 @@ public class CustomButton extends Button {
         }else{
             switch (textStyle) {
                 case Typeface.BOLD: // bold
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/OpenSans-Bold.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Medium.ttf");
                 case Typeface.NORMAL: // regular
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/OpenSans-Regular.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Regular.ttf");
                 case Typeface.ITALIC: // light
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/OpenSans-Light.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-ExtraLight.ttf");
                 default:
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/OpenSans-Regular.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/Montserrat-Regular.ttf");
             }
         }
     }

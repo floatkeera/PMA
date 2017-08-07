@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AnimatedCircleLoadingView">
+        <attr name="animCircleLoadingView_mainColor" format="color"/>
+        <attr name="animCircleLoadingView_secondaryColor" format="color" />
+        <attr name="animCircleLoadingView_checkMarkTintColor" format="color"/>
+        <attr name="animCircleLoadingView_failureMarkTintColor" format="color" />
+        <attr name="animCircleLoadingView_textColor" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context="com.teephopk.pma.WelcomeActivity">
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/youtube_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+           />
+
+        <com.teephopk.pma.CustomTitleTextView
+            android:id="@+id/txtWelcomePromo"
+            android:layout_width="wrap_content"
+
+
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/youtube_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="@string/welcomepromotion"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="italic"
+
+            />
+    ]
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtWelcomePromo"
+        android:layout_above="@+id/fblogin_button"
+        android:id = "@+id/midview"
+
+       >
+
+        <com.teephopk.pma.CustomTitleTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/welcome"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            android:textStyle="italic"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+
+
+
+
+
+        <com.teephopk.pma.CustomButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnSkip"
+            android:layout_alignLeft="@+id/fblogin_button"
+            android:layout_alignRight="@+id/fblogin_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+
+            android:background="@color/md_grey_300"
+
+            android:text="@string/Register"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/fblogin_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:layout_above="@+id/btnLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="2"
+            android:fontFamily="sans-serif-light"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textSize="20sp" />
+
+        <com.teephopk.pma.CustomButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnRegister"
+            android:layout_alignLeft="@+id/fblogin_button"
+            android:layout_alignRight="@+id/fblogin_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:background="@color/colorAccent"
+            android:text="@string/Login"
+            android:textAllCaps="false"
+            android:textColor="@color/md_white_1000"
+            android:textSize="24sp" />
+
+        <com.teephopk.pma.CustomButton
+            android:id="@+id/btnSkip"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/skiplogin"
+            android:textAllCaps="false"
+            android:textColor="@color/md_white_1000"
+            android:textSize="24sp"
+            android:textStyle="normal" />
+
+
+
+
+</RelativeLayout>

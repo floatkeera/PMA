@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -35,19 +36,34 @@ dependencies {
     compile('com.mikepenz:materialdrawer:5.9.4@aar') {
         transitive = true
     }
-    compile 'com.android.support:appcompat-v7:25.4.0'
-    compile 'com.android.support:design:25.4.0'
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
     compile 'com.android.support:support-v4:25.3.1'
-    testCompile 'junit:junit:4.12'
-    compile 'com.google.firebase:firebase-core:11.0.1'
-    compile 'com.google.firebase:firebase-database:11.0.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.4.0'
+    compile 'com.android.support:preference-v7:25.4.0'
+    compile 'com.android.support:design:25.4.0'
+    compile 'com.google.firebase:firebase-core:11.0.2'
+    compile 'com.google.firebase:firebase-database:11.0.2'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
-    compile 'com.google.firebase:firebase-auth:11.0.1'
-    compile 'com.google.firebase:firebase-storage:11.0.1'
+    compile 'com.google.firebase:firebase-auth:11.0.2'
+    compile 'com.google.firebase:firebase-storage:11.0.2'
     compile 'co.omise:omise-android:2.2.0'
     compile 'co.omise:omise-java:2.0.8'
     compile 'io.card:android-sdk:5.5.0'
-    compile 'com.google.firebase:firebase-messaging:11.0.1'
+    compile 'com.google.firebase:firebase-messaging:11.0.2'
     compile 'com.firebase:firebase-jobdispatcher:0.5.2'
-    compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile 'com.nulab-inc:zxcvbn:1.2.3'
+    compile 'com.github.jlmd:AnimatedCircleLoadingView:1.1.5@aar'
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
 }
+
+
+
+
+
+
+apply plugin: 'com.google.gms.google-services'

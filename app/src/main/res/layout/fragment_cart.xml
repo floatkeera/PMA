@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.teephopk.pma.CartFragment">\
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.teephopk.pma.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txtTest"
+        android:textSize="36sp"
+        android:gravity="center"/>
+
+</FrameLayout>

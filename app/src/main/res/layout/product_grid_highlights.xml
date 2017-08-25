@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linearlayout"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+
+
+
+
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="16dp"
+
+
+        />
+
+
+    <com.teephopk.pma.CustomTitleTextView
+        android:id="@+id/txtProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minLines="2"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="Game of Thrones"
+
+
+        android:textSize="16sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar"
+            style="@style/CustomRating"
+            android:numStars="5"
+            android:rating="4"
+            android:stepSize="0.1"
+            android:layout_marginStart="6dp"
+            android:isIndicator="true"
+            android:layout_marginTop="8dp"
+            android:progressTint="@color/md_yellow_600"
+            android:progressBackgroundTint="@color/md_yellow_600"
+            android:secondaryProgressTint="@color/md_yellow_600"
+
+
+            />
+
+
+
+        <com.teephopk.pma.CustomTextView
+            android:id="@+id/txtProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THB 235"
+            android:textColor="@color/accent"
+            android:textSize="12sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            />
+
+        <com.teephopk.pma.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/discount"
+            android:textColor="#FF3333"
+            android:layout_marginStart="8dp"
+            android:text="THB199"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+
+            android:visibility="invisible"
+
+            />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

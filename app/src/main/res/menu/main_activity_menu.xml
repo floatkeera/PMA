@@ -6,5 +6,12 @@
 
         android:title="Cart"
         app:showAsAction="always"
-        android:icon = "@drawable/ic_cart_white"/>
+        app:actionLayout="@layout/badge_layout"/>
+
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/ic_search_black_24dp"
+        app:showAsAction="collapseActionView|ifRoom"
+        android:actionViewClass="android.widget.SearchView"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
 </menu>

@@ -2,13 +2,32 @@ package com.teephopk.pma;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -19,7 +38,7 @@ import android.view.ViewGroup;
  * Use the {@link CatalogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CatalogFragment extends Fragment {
+public class CatalogFragment extends Fragment implements CategoryDisplayAdapter.ItemClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,6 +49,13 @@ public class CatalogFragment extends Fragment {
     private String mParam2;
     SwipeRefreshLayout swipeLayout;
     CustomButton testBtn;
+    RecyclerView recyclerView;
+    CategoryDisplayAdapter myAdapter;
+    ValueEventListener valueEventListener;
+
+    ArrayList<CategoryDisplay> categoryDisplays;
+
+    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
 
 
     public CatalogFragment() {
@@ -68,28 +94,57 @@ public class CatalogFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_catalog, container, false);
-        swipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
 
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
+        categoryDisplays = new ArrayList<CategoryDisplay>();
 
 
         return view;
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
-        testBtn = (CustomButton)view.findViewById(R.id.testbtn);
+    public void onViewCreated(View view, Bundle savedInstanceState) {
 
-        testBtn.setOnClickListener(new View.OnClickListener() {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        ((MenuActivity) getActivity()).changeTitle(getString(R.string.catalogtitle));
+
+        ((MenuActivity) getActivity()).navigationView.setCheckedItem(R.id.nav_products);
+
+        DatabaseReference categoryDisplayList = mRootRef.child("categoryDisplayList");
+
+
+
+        valueEventListener = new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                CartFragment.cartList = CartFragment.cartList+1;
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                categoryDisplays.clear();
+
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    categoryDisplays.add(ds.getValue(CategoryDisplay.class));
+                }
+
+                myAdapter.notifyDataSetChanged();
             }
-        });
 
-        ((MenuActivity)getActivity()).changeTitle("Product Catalog");
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-        ((MenuActivity)getActivity()).navigationView.setCheckedItem(R.id.nav_products);
+            }
+        };
+
+        categoryDisplayList.addValueEventListener(valueEventListener);
+
+
+        String[] data = {"BOOKS", "ELECTRONICS", "CLOTHING", "GIFTS", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"};
+        myAdapter = new CategoryDisplayAdapter(getActivity(), categoryDisplays, false);
+        myAdapter.setClickListener(this);
+        recyclerView.setAdapter(myAdapter);
+        RecyclerView.LayoutManager recyclerLayoutManager = new GridLayoutManager(getActivity(), 2);
+        recyclerView.setLayoutManager(recyclerLayoutManager);
+
 
     }
 
@@ -109,6 +164,39 @@ public class CatalogFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
+
+    @Override
+    public void onItemClick(View view, int position) {
+
+
+        final CategoryDisplay thiscat = myAdapter.getItem(position);
+
+        DatabaseReference categoryDisplayList = mRootRef.child("categoryDisplayList");
+
+
+        categoryDisplayList.removeEventListener(valueEventListener);
+
+
+        categoryDisplayList.child(thiscat.UID).child("viewcount").setValue(thiscat.viewcount + 1);
+
+        Intent a = new Intent(getActivity(), SubCatalogActivity.class);
+
+
+        if (Locale.getDefault().getLanguage().equals("th")) {
+            a.putExtra("NAME", thiscat.name_th);
+        } else {
+            a.putExtra("NAME", thiscat.name_en);
+        }
+
+        a.putExtra("UID", thiscat.UID);
+        a.putExtra("IMAGE", thiscat.background);
+
+        startActivity(a);
+        ((MenuActivity) getActivity()).animateIntent();
+
+
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this

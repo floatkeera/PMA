@@ -36,6 +36,8 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.Locale;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,12 +53,14 @@ public class ProfileFragment extends Fragment {
     final static int IMAGE_CHANGED = 999;
     final static int NAME_CHANGED = 888;
     final static int EDIT_PROFILE = 777;
+    final static int IMAGE_NAME_CHANGED = 111;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    String[] profile1 = new String[] {"Change password", "Update my profile", "My payment methods", "My addresses", "Logout"};
+    String[] profile1 = new String[] {"Change password", "Update my profile", "Logout"};
     ListView lv;
     ImageView imageView;
     Uri imageUri;
@@ -175,7 +179,7 @@ public class ProfileFragment extends Fragment {
 
 
         if(Locale.getDefault().getLanguage().equals("th")){
-            profile1 = new String[] {"เปลี่ยนรหัสผ่าน", "อัปเดตโปรไฟล์", "วิธีชำระเงินของฉัน", "ที่อยู่ของฉัน", "ออกจากระบบ"};
+            profile1 = new String[] {"เปลี่ยนรหัสผ่าน", "อัปเดตโปรไฟล์", "ออกจากระบบ"};
         }
 
         ((MenuActivity)getActivity()).navigationView.setCheckedItem(R.id.nav_profile);
@@ -233,7 +237,7 @@ public class ProfileFragment extends Fragment {
 
                 }
 
-                if(i == 5) {
+                if(i == 3) {
 
 
 
@@ -268,6 +272,7 @@ public class ProfileFragment extends Fragment {
                     .load(imageUri)
                     .apply(new RequestOptions().circleCrop())
                     .placeholder(R.drawable.progress_animation)
+                    .transition(withCrossFade())
                     .into(imageView);
         }
 
@@ -308,6 +313,31 @@ public class ProfileFragment extends Fragment {
 
         }
 
+        if(resultCode == IMAGE_NAME_CHANGED && requestCode == EDIT_PROFILE){
+
+            attemptGetPic();
+            ((MenuActivity)getActivity()).updateHeaderPicture();
+
+
+            mUser.reload().addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    mUser = FirebaseAuth.getInstance().getCurrentUser();
+                    mNameView.setText(mUser.getDisplayName());
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                    Log.d("FBFAILED", "Firebase failed reload");
+                }
+            });
+
+            ((MenuActivity)getActivity()).updateHeaderName();
+
+        }
+
+
 
 
     }
@@ -342,13 +372,18 @@ public class ProfileFragment extends Fragment {
 
                 imageUri = uri;
 
-                GlideApp.with(ProfileFragment.this)
-                        .load(imageUri)
-                        .apply(new RequestOptions().circleCrop())
-                        .placeholder(R.drawable.progress_animation)
-                        .into(imageView);
+                if(getView() != null) {
 
-                imageExists = true;
+
+                    GlideApp.with(ProfileFragment.this)
+                            .load(imageUri)
+                            .apply(new RequestOptions().circleCrop())
+                            .placeholder(R.drawable.progress_animation)
+                            .transition(withCrossFade())
+                            .into(imageView);
+
+                    imageExists = true;
+                }
 
 
             }

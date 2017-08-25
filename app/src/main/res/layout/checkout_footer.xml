@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<com.teephopk.pma.CustomTitleTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+
+        android:padding="8dp"
+        android:layout_toLeftOf="@id/totalprice"
+        android:id="@+id/totaltext"/>
+
+
+    <com.teephopk.pma.CustomTitleTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorDelete"
+        android:textSize="20sp"
+
+        android:id="@+id/totalprice"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingRight="16dp"
+        android:layout_alignParentRight="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:id="@+id/divider1"
+        android:layout_below="@id/totaltext"/>
+
+    <com.teephopk.pma.CustomTitleTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider1"
+        android:padding="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:text="@string/shippingaddress"
+        android:id="@+id/addresstitle" />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:id="@+id/addressview"
+       android:paddingLeft="8dp"
+       android:paddingRight="8dp"
+       android:layout_marginBottom="12dp"
+       android:layout_below="@id/addresstitle">
+
+       <com.teephopk.pma.CustomTextInputLayout
+           android:id="@+id/nameinput"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+
+           app:hintTextAppearance="@style/TextLabel">
+
+           <com.teephopk.pma.CustomEditText
+               android:id="@+id/name"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/prompt_name"
+               android:imeOptions="actionNext"
+               android:maxLines="1"
+               android:nextFocusDown="@+id/line1"
+               android:inputType="textCapWords" />
+
+       </com.teephopk.pma.CustomTextInputLayout>
+
+       <com.teephopk.pma.CustomTextInputLayout
+           android:id="@+id/emailinput"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:hintTextAppearance="@style/TextLabel">
+
+           <com.teephopk.pma.CustomEditText
+               android:id="@+id/line1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/prompt_line1"
+               android:imeOptions="actionNext"
+               android:inputType="textCapWords"
+               android:maxLines="1"
+               android:nextFocusDown="@+id/line2" />
+
+       </com.teephopk.pma.CustomTextInputLayout>
+
+
+       <com.teephopk.pma.CustomTextInputLayout
+           android:id="@+id/passwordinput"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:hintTextAppearance="@style/TextLabel">
+
+           <com.teephopk.pma.CustomEditText
+               android:id="@+id/line2"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/prompt_line2"
+               android:imeOptions="actionNext"
+               android:inputType="textCapWords"
+               android:maxLines="1"
+               android:nextFocusDown="@+id/changwat" />
+
+       </com.teephopk.pma.CustomTextInputLayout>
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="5">
+
+
+           <com.teephopk.pma.CustomTextInputLayout
+               android:id="@+id/cityinput"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               app:hintTextAppearance="@style/TextLabel"
+               android:layout_weight="3">
+
+               <com.teephopk.pma.CustomEditText
+                   android:id="@+id/changwat"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="@string/prompt_changwat"
+                   android:imeOptions="actionNext"
+                   android:inputType="textCapWords"
+                   android:maxLines="1"
+
+                   />
+
+           </com.teephopk.pma.CustomTextInputLayout>
+
+           <com.teephopk.pma.CustomTextInputLayout
+               android:id="@+id/zipinput"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               app:hintTextAppearance="@style/TextLabel"
+               android:layout_weight="2">
+
+               <com.teephopk.pma.CustomEditText
+                   android:id="@+id/zipcode"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="@string/prompt_zipcode"
+                   android:imeOptions="actionDone"
+                   android:inputType="number"
+                   android:maxLines="1"
+
+                   />
+
+           </com.teephopk.pma.CustomTextInputLayout>
+
+
+
+
+       </LinearLayout>
+
+
+
+
+
+
+
+
+   </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:id="@+id/divider2"
+        android:layout_below="@id/addressview"/>
+
+    <com.teephopk.pma.CustomTitleTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider2"
+        android:padding="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:text="@string/payment"
+        android:id="@+id/paymenttitle" />
+
+
+    <com.teephopk.pma.CustomButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/addpaymentmethod"
+        android:textColor="@color/md_white_1000"
+        android:background="@drawable/roundedbuttoncolor"
+        android:layout_below="@id/paymenttitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:gravity="center"
+        android:id="@+id/creditcardbtn"
+
+        android:textAlignment="gravity"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/creditcardview"
+        android:layout_below="@id/paymenttitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+
+
+           >
+
+            <ImageView
+                android:layout_height="60dp"
+                android:layout_width="wrap_content"
+                android:id="@+id/creditcardbrand"
+                android:layout_margin="8dp"/>
+
+            <com.teephopk.pma.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/creditcardtext"
+                android:layout_margin="8dp"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+
+
+        <com.teephopk.pma.CustomButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/paynow"
+            android:textColor="@color/md_white_1000"
+            android:background="@drawable/roundedbuttoncolor"
+
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp"
+            android:gravity="center"
+            android:id="@+id/checkoutbtn"
+            android:visibility="gone"
+
+            android:textAlignment="gravity"
+            />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

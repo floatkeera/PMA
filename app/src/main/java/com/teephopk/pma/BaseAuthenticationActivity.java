@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.DatePickerDialog;
 import android.os.Build;
+import android.view.Menu;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.ProgressBar;
@@ -121,6 +122,8 @@ public class BaseAuthenticationActivity extends BaseActivityWithToolbar {
         mProgressView.setIndeterminateDrawable(cubeGrid);
     }
 
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
 }

@@ -62,13 +62,17 @@ public class WelcomeActivity extends YouTubeBaseActivity implements Authenticati
         mSkipButton = (CustomButton) findViewById(R.id.btnSkip);
 
 
-        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
-        youTubeView.initialize(PUBLIC_KEY, this);
+
 
 
 
 
         mAuth = FirebaseAuth.getInstance();
+
+        if (mAuth.getCurrentUser() == null) {
+            youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+            youTubeView.initialize(PUBLIC_KEY, this);
+        }
 
 
 
@@ -170,8 +174,11 @@ public class WelcomeActivity extends YouTubeBaseActivity implements Authenticati
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
+
+
             Intent intent = new Intent(WelcomeActivity.this, MenuActivity.class);
             startActivity(intent);
+
 
         }
 

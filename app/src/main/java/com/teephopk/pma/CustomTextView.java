@@ -46,13 +46,13 @@ public class CustomTextView extends TextView {
         if(Locale.getDefault().getLanguage().equals("th")){
             switch (textStyle) {
                 case Typeface.BOLD: // bold
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/Umpush-Bold.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/NotoSansThaiUI-Bold.ttf");
                 case Typeface.NORMAL: // regular
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/Umpush-Book.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/NotoSansThaiUI-Regular.ttf");
                 case Typeface.ITALIC: // light
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/Umpush-Light.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/NotoSansThaiUI-Regular.ttf");
                 default:
-                    return Typeface.createFromAsset(context.getAssets(), "fonts/Umpush-Book.ttf");
+                    return Typeface.createFromAsset(context.getAssets(), "fonts/NotoSansThaiUI-Regular.ttf");
             }
         }else{
             switch (textStyle) {

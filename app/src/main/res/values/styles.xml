@@ -13,6 +13,12 @@
 
     </style>
 
+    <style name="AppTheme.Credit" parent = "@style/OmiseSDKTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
     <style name="AppTheme.Navdrawer" parent = "AppTheme">
 
         <item name="windowActionBar">false</item>
@@ -27,21 +33,19 @@
 
     </style>
 
-    <style name="AppTheme.NoActionBar" parent = "AppTheme">
-
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:fitsSystemWindows">false</item>
+    <style name="AppTheme.NoActionBar" parent = "Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowTranslucentStatus">true</item>
-
-
-
-
 
 
         <!---->
         <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
     </style>
+
+
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -59,6 +63,9 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="CustomRating" parent="@style/Widget.AppCompat.RatingBar.Small">
+
+    </style>
 
 
 </resources>

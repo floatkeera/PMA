@@ -5,46 +5,19 @@
         <item
             android:id="@+id/nav_promotions"
             android:icon="@drawable/ic_highlight_24dp"
-            android:title="Highlights" />
+            android:title="@string/highlightstitle" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"
-            android:title="Profile" />
+            android:title="@string/profiletitle" />
         <item
             android:id="@+id/nav_products"
             android:icon="@drawable/ic_products"
-            android:title="Product Categories" />
-        <item
-            android:id="@+id/nav_cart"
-            android:icon="@drawable/ic_cart"
-            android:title="Cart" />
-        <item
-            android:id="@+id/nav_orders"
-            android:icon="@drawable/ic_order_black_24dp"
-            android:title="My orders" />
+            android:title="@string/catalogtitle" />
     </group>
 
 
-    <item android:title="Popular Categories">
-        <menu>
-            <group
-                android:id="@+id/menu_mid"
-                android:checkableBehavior="single"
-                android:title="Popular categories">
 
-                <item
-
-                    android:id="@+id/nav_cat1"
-                    android:icon="@drawable/ic_devices_black_24dp"
-                    android:title="Electronics" />
-                <item
-                    android:id="@+id/nav_cat2"
-                    android:icon="@drawable/ic_clothes_hanger_icon_3"
-                    android:title="Clothing" />
-
-            </group>
-        </menu>
-    </item>
 
 
     <group
@@ -54,7 +27,7 @@
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_black_24dp"
-            android:title="Settings" />
+            android:title="@string/action_settings" />
 
 
     </group>

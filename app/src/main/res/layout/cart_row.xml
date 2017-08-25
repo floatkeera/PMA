@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/productImage"
+
+        android:layout_alignParentStart="true"
+        android:layout_margin="8dp"
+        android:layout_centerVertical="true"/>
+
+
+    <com.teephopk.pma.CustomTitleTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/productImage"
+        android:layout_alignParentTop="true"
+
+        android:padding="4dp"
+
+        android:id="@+id/productName"
+        android:textSize="18sp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/productName"
+        android:id="@+id/price"
+        android:layout_alignStart="@+id/productName">
+
+
+        <com.teephopk.pma.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/productPrice"
+
+            android:textSize="14sp"
+
+            android:paddingLeft="4dp"
+
+            android:textColor="@color/colorPrimaryDark"/>
+
+
+        <com.teephopk.pma.CustomTextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="THB199"
+            android:textColor="#FF3333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp"
+
+            android:visibility="gone"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"
+
+        android:src="@drawable/ic_minus"
+        android:background="@drawable/roundedbutton"
+        android:id="@+id/qtyminus"
+        android:layout_below="@+id/price"
+        android:layout_toEndOf="@+id/productImage" />
+    <com.teephopk.pma.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/productQty"
+        android:layout_alignTop="@id/qtyminus"
+        android:layout_toRightOf="@+id/qtyminus"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+
+
+        android:textColor="@color/colorPrimaryDark"/>
+
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_add2"
+
+        android:background="@drawable/roundedbutton"
+        android:id="@+id/qtyplus"
+        android:layout_alignTop="@id/qtyminus"
+        android:layout_toRightOf="@+id/productQty" />
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/qtyminus"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+       android:padding="12dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/btnDelete"
+
+
+
+        android:background="@drawable/roundedbutton"
+
+        android:textColor="@color/md_white_1000"
+        android:src="@drawable/ic_delete_black_24dp"/>
+
+
+
+</RelativeLayout>

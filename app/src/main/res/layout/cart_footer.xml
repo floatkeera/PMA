@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.teephopk.pma.CustomTitleTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+
+        android:padding="8dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/totaltext"/>
+
+
+    <com.teephopk.pma.CustomTitleTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorDelete"
+        android:textSize="20sp"
+
+        android:id="@+id/totalprice"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_toRightOf="@id/totaltext"/>
+
+    <com.teephopk.pma.CustomButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/checkout"
+        android:textColor="@color/md_white_1000"
+        android:background="@drawable/roundedbuttoncolor"
+        android:layout_below="@+id/totalprice"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:gravity="center"
+        android:id="@+id/checkoutbtn"
+
+        android:textAlignment="gravity"
+        />
+
+
+</RelativeLayout>

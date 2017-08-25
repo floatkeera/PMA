@@ -61,6 +61,7 @@
     <string name="profiletitle">My profile</string>
     <string name="highlightstitle">Highlights</string>
     <string name="catalogtitle">Product catalog</string>
+    <string name="myorderstitle">My orders</string>
 
     <string name="changephoto">Change your profile photo</string>
     <string name="accountsettings">Account Settings</string>
@@ -134,10 +135,18 @@
         <item>Entry 3</item>
     </string-array>
 
-    <string-array name="list_preference_entry_values">
+    <string-array name="qtynum">
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
     </string-array>
 
     <string-array name="multi_select_list_preference_default_value" />
@@ -154,5 +163,48 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
 
+    <string name="cart">Cart</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="qty">Qty:</string>
+    <string name="notconnected">You\'re not connected to the Internet.</string>
+    <string name="changeqty">Change quantity</string>
+    <string name="delete">Delete</string>
 
+    <string name="areyousure">Are you sure you want to delete&#160;</string>
+    <string name="yesdelete">Yes, delete</string>
+    <string name="nokeepit">No, keep it</string>
+
+    <string name="items">items</string>
+    <string name="totaltext">Your total</string>
+
+    <string name="addsomethingtocart">Your shopping cart is empty.\nWhy don\'t you add something to it?</string>
+
+    <string name="checkout">Checkout</string>
+
+    <string name="hotsale">Hot sale</string>
+    <string name="highestrated">Highest rated</string>
+    <string name="topcategories">Top categories</string>
+
+    <string name="addedtocart">added to cart.</string>
+    <string name="viewcart">VIEW CART</string>
+    <string name="deleted">deleted.</string>
+    <string name="undo">UNDO</string>
+    <string name="addpaymentmethod">Add payment method</string>
+    <string name="ordersummary">Order summary</string>
+
+    <string name="prompt_line1">House No., Soi, Road</string>
+    <string name="prompt_line2">Sub-district, District</string>
+    <string name="prompt_changwat">Province</string>
+    <string name="prompt_zipcode">Zip code</string>
+
+    <string name="paynow">Pay now</string>
+    <string name="paymentcompleted">Payment completed</string>
+    <string name="paymentcompleteddetail">Your order has been processed. A confirmation email will be sent to you soon. Thanks for shopping with us!</string>
+
+    <string name="continueshopping">Continue shopping</string>
+    <string name="shippingaddress">Shipping address</string>
+    <string name="payment">Payment</string>
+
+    <string name="productinfo">Product information</string>
+    <string name="freeshipping">Free shipping</string>
 </resources>

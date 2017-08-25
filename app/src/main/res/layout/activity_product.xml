@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_product"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.teephopk.pma.ProductActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+
+        android:theme="@style/ToolbarThemeWhite">
+
+        <com.teephopk.pma.CustomTitleTextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:singleLine="true"
+            android:textColor="@color/md_white_1000"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/img_product"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <com.teephopk.pma.CustomTitleTextView
+                android:id="@+id/product_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Samsung Galaxy S8"
+                android:textSize="28sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/CustomRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="top"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressBackgroundTint="@color/md_yellow_600"
+                    android:progressTint="@color/md_yellow_600"
+                    android:rating="4"
+                    android:secondaryProgressTint="@color/md_yellow_600"
+
+
+                    android:stepSize="0.1" />
+
+                <com.teephopk.pma.CustomTextView
+                    android:id="@+id/ratingtxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_toEndOf="@+id/ratingBar"
+                    android:gravity="bottom"
+                    android:text="4.4"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+
+
+            </RelativeLayout>
+
+
+            <com.teephopk.pma.CustomTextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="THB26,900"
+                android:textColor="@color/accent"
+                android:textSize="20sp" />
+
+            <com.teephopk.pma.CustomTextView
+                android:id="@+id/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="THB199"
+                android:textColor="#FF3333"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+
+                android:visibility="gone"
+
+                />
+
+
+            <com.teephopk.pma.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/freeshipping"
+                android:textColor="@color/md_black_1000"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.teephopk.pma.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:text="@string/qty" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/numpicker"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="8dp"
+                    app:np_dividerColor="@color/colorPrimary"
+                    app:np_dividerDistance="24dp"
+                    app:np_dividerThickness="1dp"
+                    app:np_max="10"
+                    app:np_min="1"
+                    app:np_orientation="vertical"
+                    app:np_selectedTextSize="18sp"
+                    app:np_textSize="12sp"
+                    app:np_wrapSelectorWheel="false">
+
+
+                </com.shawnlin.numberpicker.NumberPicker>
+
+
+                <com.teephopk.pma.CustomButton
+
+                    android:id="@+id/btn_cart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginBottom="16dp"
+
+
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/roundedbuttoncolor"
+                    android:drawableLeft="@drawable/ic_add_shopping_cart_black_24dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/add_to_cart"
+                    android:textAllCaps="true"
+
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="24sp" />
+
+
+            </LinearLayout>
+
+
+            <com.teephopk.pma.CustomTitleTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/productinfo"
+
+                android:textColor="@color/primary_dark"
+                android:textSize="24sp" />
+
+            <com.teephopk.pma.CustomTextView
+                android:id="@+id/product_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="HELKSJF:SDFJOISPDJFPOISJDFOISJDF POJDF JIPS DFPIOSDF OSDPF PODSFJOSPJFSDF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

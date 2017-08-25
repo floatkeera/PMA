@@ -95,31 +95,6 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
 
-        if(s.equals("NOTIFICATIONS")){
-
-            boolean isChecked = Boolean.valueOf(sharedPreferences.toString());
-            if (isChecked) {
-                FirebaseMessaging.getInstance().subscribeToTopic("MAIN_NO_SOUND");
-            } else {
-                FirebaseMessaging.getInstance().unsubscribeFromTopic("MAIN_NOSOUND");
-                FirebaseMessaging.getInstance().unsubscribeFromTopic("MAIN_SOUND");
-            }
-
-        }
-
-        if(s.equals("SOUND")){
-
-            boolean isChecked = Boolean.valueOf(sharedPreferences.toString());
-            if (isChecked) {
-                FirebaseMessaging.getInstance().subscribeToTopic("MAIN_SOUND");
-                FirebaseMessaging.getInstance().unsubscribeFromTopic("MAIN_NOSOUND");
-            } else {
-                FirebaseMessaging.getInstance().unsubscribeFromTopic("MAIN_SOUND");
-                FirebaseMessaging.getInstance().subscribeToTopic("MAIN_NOSOUND");
-            }
-
-        }
-
 
     }
 

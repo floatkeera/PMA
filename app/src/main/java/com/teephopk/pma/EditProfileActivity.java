@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -41,6 +42,7 @@ public class EditProfileActivity extends BaseActivityWithToolbar {
 
     final static int PICK_IMAGE = 100;
     final static int IMAGE_CHANGED = 999;
+    final static int IMAGE_NAME_CHANGED = 111;
 
     final static int NAME_CHANGED = 888;
 
@@ -69,35 +71,33 @@ public class EditProfileActivity extends BaseActivityWithToolbar {
         mUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
-
-
         FirebaseStorage storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
         imageRef = storageRef.child("users");
 
 
         String UID = mUser.getUid();
-        imageRef = imageRef.child(UID+"/dp.png");
+        imageRef = imageRef.child(UID + "/dp.png");
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbarTxt = (CustomTitleTextView)findViewById(R.id.toolbar_title);
+        mToolbarTxt = (CustomTitleTextView) findViewById(R.id.toolbar_title);
 
         imageView = (ImageView) findViewById(R.id.dpImageView);
 
         txtChangePhoto = (CustomTitleTextView) findViewById(R.id.changephototxt);
 
         initializeToolbar("Update my profile");
-        mName = (EditText)findViewById(R.id.name);
+        mName = (EditText) findViewById(R.id.name);
 
-       if(getIntent().getStringExtra("IMAGEURI") != null){
-           imageUri = Uri.parse(getIntent().getStringExtra("IMAGEURI"));
+        if (getIntent().getStringExtra("IMAGEURI") != null) {
+            imageUri = Uri.parse(getIntent().getStringExtra("IMAGEURI"));
 
-           GlideApp.with(EditProfileActivity.this)
-                   .load(imageUri)
-                   .apply(new RequestOptions().circleCrop())
-                   .placeholder(R.drawable.progress_animation)
-                   .into(imageView);
-       }
+            GlideApp.with(EditProfileActivity.this)
+                    .load(imageUri)
+                    .apply(new RequestOptions().circleCrop())
+                    .placeholder(R.drawable.progress_animation)
+                    .into(imageView);
+        }
 
 
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -121,8 +121,8 @@ public class EditProfileActivity extends BaseActivityWithToolbar {
         mName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                    if(i == EditorInfo.IME_ACTION_DONE)
-                        mName.clearFocus();
+                if (i == EditorInfo.IME_ACTION_DONE)
+                    mName.clearFocus();
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(mName.getWindowToken(), 0);
 
@@ -158,51 +158,7 @@ public class EditProfileActivity extends BaseActivityWithToolbar {
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
 
-            dialog = new ProgressDialog(EditProfileActivity.this);
-            dialog.setTitle("Please wait.");
-            dialog.setMessage("We're updating your profile...");
-            CubeGrid cubeGrid = new CubeGrid();
-            cubeGrid.setColor(getResources().getColor(R.color.colorAccent));
-
-            dialog.setIndeterminate(true);
-            dialog.setCancelable(false);
-            dialog.setIndeterminateDrawable(cubeGrid);
-
-            dialog.show();
-
-            profileUpdates = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(mName.getText().toString()).build();
-
-
-            if(!imageUri.toString().equals(getIntent().getStringExtra("IMAGEURI"))) {
-                UploadTask uploadTask = imageRef.putFile(imageUri);
-
-                // Register observers to listen for when the download is done or if it fails
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        dialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "Upload failed", Toast.LENGTH_LONG).show();
-
-                    }
-                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-
-                        setResult(IMAGE_CHANGED);
-                        updateProfile(profileUpdates);
-
-                    }
-                });
-            } else if(!mName.getText().toString().equals(mUser.getDisplayName())){
-                setResult(NAME_CHANGED);
-                updateProfile(profileUpdates);
-
-            } else{
-                dialog.dismiss();
-                finish();
-            }
+            executeConnected();
 
         }
 
@@ -210,17 +166,17 @@ public class EditProfileActivity extends BaseActivityWithToolbar {
     }
 
 
+
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK && requestCode == PICK_IMAGE){
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
             imageUri = data.getData();
             Glide.with(this)
                     .load(imageUri)
                     .apply(new RequestOptions().circleCrop())
                     .into(imageView);
-
 
 
         }
@@ -237,12 +193,83 @@ public class EditProfileActivity extends BaseActivityWithToolbar {
                             dialog.dismiss();
 
 
-
                             finish();
 
 
                         }
                     }
                 });
+    }
+
+    public void updateInfo(){
+        dialog = new ProgressDialog(EditProfileActivity.this);
+        dialog.setTitle("Please wait.");
+        dialog.setMessage("We're updating your profile...");
+        CubeGrid cubeGrid = new CubeGrid();
+        cubeGrid.setColor(getResources().getColor(R.color.colorAccent));
+
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(false);
+        dialog.setIndeterminateDrawable(cubeGrid);
+
+        dialog.show();
+
+        profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(mName.getText().toString()).build();
+
+
+        if (imageUri != null && !imageUri.toString().equals(getIntent().getStringExtra("IMAGEURI"))) {
+            UploadTask uploadTask = imageRef.putFile(imageUri);
+
+            // Register observers to listen for when the download is done or if it fails
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    dialog.dismiss();
+                    Toast.makeText(getApplicationContext(), "Upload failed", Toast.LENGTH_LONG).show();
+
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+
+                    if (!mName.getText().toString().equals(mUser.getDisplayName())) {
+                        setResult(IMAGE_NAME_CHANGED);
+                    } else {
+                        setResult(IMAGE_CHANGED);
+                    }
+
+
+                    updateProfile(profileUpdates);
+
+                }
+            });
+        } else if (!mName.getText().toString().equals(mUser.getDisplayName())) {
+            setResult(NAME_CHANGED);
+            updateProfile(profileUpdates);
+
+        } else {
+            dialog.dismiss();
+            finish();
+        }
+    }
+
+    public void executeConnected(){
+
+
+        View parentLayout = findViewById(android.R.id.content);
+
+        if(isConnected()){
+            updateInfo();
+        } else{
+            Snackbar.make(parentLayout, getString(R.string.notconnected), Snackbar.LENGTH_INDEFINITE).setAction("RETRY", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    executeConnected();
+                }
+            }).show();
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 package com.teephopk.pma;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,8 +8,8 @@ import java.util.List;
  */
 
 public class Category {
-    String name;
-    List<Product> productList;
+    public String name;
+    public ArrayList<Product> productList;
 
     public Category(){
         //Empty constructor for Firebase

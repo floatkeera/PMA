@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -37,7 +39,7 @@ public class MenuActivity extends BaseActivityWithToolbar implements NavigationV
     ProfileFragment profileFragment;
     HighlightsFragment promotionFragment;
     CatalogFragment categoryFragment;
-    CartFragment cartFragment;
+
     SettingsFragment settingsFragment;
     MyOrdersFragment myOrdersFragment;
 
@@ -54,6 +56,8 @@ public class MenuActivity extends BaseActivityWithToolbar implements NavigationV
     boolean cartPressed = false;
 
     Menu menu;
+
+
 
 
     @Override
@@ -82,7 +86,7 @@ public class MenuActivity extends BaseActivityWithToolbar implements NavigationV
         profileFragment = new ProfileFragment();
         promotionFragment = new HighlightsFragment();
         categoryFragment = new CatalogFragment();
-        cartFragment = new CartFragment();
+
         settingsFragment = new SettingsFragment();
         myOrdersFragment = new MyOrdersFragment();
 
@@ -96,7 +100,7 @@ public class MenuActivity extends BaseActivityWithToolbar implements NavigationV
 
         FragmentTransaction fragmentTransaction;
         fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, profileFragment, "PROFILE");
+        fragmentTransaction.replace(R.id.fragment_container, promotionFragment, "HIGHLIGHTS");
         fragmentTransaction.commit();
 
         getFragmentManager().executePendingTransactions();
@@ -181,51 +185,8 @@ public class MenuActivity extends BaseActivityWithToolbar implements NavigationV
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the main_activity_menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
 
 
-        this.menu = menu;
-        return true;
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_cart) {
-
-            if (cartFragment.isVisible() && cartPressed) {
-                onBackPressed();
-            } else if (!cartPressed && !cartFragment.isVisible()) {
-                cartPressed = true;
-
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.setCustomAnimations(R.animator.down, R.animator.fade_out, R.animator.fade_in, R.animator.up);
-
-                ft.replace(R.id.fragment_container, cartFragment, "CART");
-                ft.addToBackStack(null);
-                ft.commit();
-                menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_close_black_24dp));
-            } else {
-
-                onBackPressed();
-
-
-            }
-        }
-
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -281,11 +242,6 @@ public class MenuActivity extends BaseActivityWithToolbar implements NavigationV
                 setTitle("Product Catalog");
             }*/
 
-        } else if (id == R.id.nav_cart) {
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-            ft.replace(R.id.fragment_container, cartFragment, "CART");
-            ft.commit();
 
 
         } else if (id == R.id.nav_promotions) {
@@ -300,12 +256,7 @@ public class MenuActivity extends BaseActivityWithToolbar implements NavigationV
             ft.replace(R.id.fragment_container, settingsFragment, "SETTINGS");
             ft.commit();
 
-        } else if (id== R.id.nav_orders){
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-            ft.replace(R.id.fragment_container, myOrdersFragment, "ORDERS");
-            ft.commit();
-
+        }
      /*        mDrawerToggle = new ActionBarDrawerToggle(this, drawer, R.string.material_drawer_open, R.string.material_drawer_close){
 
                 *//** Called when a drawer has settled in a completely closed state. *//*
@@ -327,7 +278,7 @@ public class MenuActivity extends BaseActivityWithToolbar implements NavigationV
             drawer.addDrawerListener(mDrawerToggle);
 */
 
-        }
+
 
 
         drawer.closeDrawer(GravityCompat.START);

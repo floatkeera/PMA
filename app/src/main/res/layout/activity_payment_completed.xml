@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_payment_completed"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.teephopk.pma.PaymentCompletedActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+
+
+        android:theme="@style/ToolbarThemeWhite">
+
+        <com.teephopk.pma.CustomTitleTextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/md_white_1000"
+            android:textSize="24sp"
+            android:textStyle="normal" />
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/view1"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+
+            android:id="@+id/img_done"
+            android:src="@drawable/done"/>
+
+
+        <com.teephopk.pma.CustomTitleTextView
+            android:id="@+id/txtrequestingreset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/paymentcompleted"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="28sp"
+
+
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+        <com.teephopk.pma.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:layout_gravity="center_horizontal"
+            android:text = "@string/paymentcompleteddetail"
+            android:textAlignment="center"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+
+    </LinearLayout>
+
+    <com.teephopk.pma.CustomButton
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="gravity"
+        android:text="@string/continueshopping"
+        android:textSize="20sp"
+        android:textColor="@color/md_white_1000"
+        android:background="@drawable/roundedbuttoncolor"
+        android:id="@+id/continuebtn"/>
+
+
+
+</LinearLayout>

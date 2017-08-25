@@ -12,6 +12,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         release {
@@ -49,7 +51,8 @@ dependencies {
     compile 'com.google.firebase:firebase-storage:11.0.2'
     compile 'co.omise:omise-android:2.2.0'
     compile 'co.omise:omise-java:2.0.8'
-    compile 'io.card:android-sdk:5.5.0'
+    compile 'io.card:android-sdk:5.5.1'
+
     compile 'com.google.firebase:firebase-messaging:11.0.2'
     compile 'com.firebase:firebase-jobdispatcher:0.5.2'
     compile 'com.nulab-inc:zxcvbn:1.2.3'
@@ -59,6 +62,16 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
+
+    compile 'com.shawnlin:number-picker:2.4.4'
+
+
+    compile 'com.squareup.picasso:picasso:2.3.2'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.slider:library:1.1.5@aar'
+
+    compile 'jp.wasabeef:blurry:2.1.1'
+
 }
 
 

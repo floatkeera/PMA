@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="4">
+
+    <com.teephopk.pma.CustomTextView
+        android:id="@+id/productdetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:textColor="@color/md_black_1000"
+
+        android:layout_weight="4"
+
+        android:textSize="16sp"
+
+        />
+
+    <com.teephopk.pma.CustomTextView
+        android:id="@+id/subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/primary_dark"
+        android:gravity="end"
+
+
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:layout_weight="1"
+        />
+
+
+</LinearLayout>

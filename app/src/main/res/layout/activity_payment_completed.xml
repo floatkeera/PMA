@@ -91,7 +91,7 @@
         android:text="@string/continueshopping"
         android:textSize="20sp"
         android:textColor="@color/md_white_1000"
-        android:background="@drawable/roundedbuttoncolor"
+        android:background="@drawable/roundedbuttongreen"
         android:id="@+id/continuebtn"/>
 
 

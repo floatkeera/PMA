@@ -198,7 +198,7 @@
         android:textSize="18sp"
         android:text="@string/addpaymentmethod"
         android:textColor="@color/md_white_1000"
-        android:background="@drawable/roundedbuttoncolor"
+        android:background="@drawable/roundedbuttongreen"
         android:layout_below="@id/paymenttitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
@@ -253,7 +253,7 @@
             android:textSize="20sp"
             android:text="@string/paynow"
             android:textColor="@color/md_white_1000"
-            android:background="@drawable/roundedbuttoncolor"
+            android:background="@drawable/roundedbuttongreen"
 
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"

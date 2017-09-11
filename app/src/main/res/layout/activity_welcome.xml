@@ -69,7 +69,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="15dp"
 
-            android:background="@color/md_grey_300"
+            android:background="@drawable/roundedbuttongrey"
 
             android:text="@string/Register"
             android:textAllCaps="false"
@@ -80,16 +80,18 @@
             android:id="@+id/fblogin_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="64dp"
-            android:layout_marginRight="64dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
             android:layout_above="@+id/btnLogin"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="16dp"
             android:layout_weight="2"
             android:fontFamily="sans-serif-light"
             android:paddingBottom="10dp"
+
             android:paddingTop="10dp"
+            android:background="@drawable/roundedbuttonfacebook"
             android:textSize="20sp" />
 
         <com.teephopk.pma.CustomButton
@@ -101,10 +103,11 @@
             android:layout_alignRight="@+id/fblogin_button"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="15dp"
-            android:background="@color/colorAccent"
+
             android:text="@string/Login"
             android:textAllCaps="false"
             android:textColor="@color/md_white_1000"
+            android:background="@drawable/roundedbuttongreen"
             android:textSize="24sp" />
 
         <com.teephopk.pma.CustomButton

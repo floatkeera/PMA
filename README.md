@@ -17,7 +17,7 @@ Prior to making the mobile application, I designed the UI elements and prototype
 ![Start](http://floatkeera.github.io/assets/PMA/start.png "Start page")
 
 ### Home page
-![Home](http://floatkeera.github.io/assets/PMA/start.png "Home page")
+![Home](http://floatkeera.github.io/assets/PMA/home.png "Home page")
 
 ### Product catalog
 ![Product catalog](http://floatkeera.github.io/assets/PMA/catalog.png "Product catalog")

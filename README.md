@@ -13,10 +13,15 @@ Prior to making the mobile application, I designed the UI elements and prototype
 
 ## Sample screenshots
 
+### Start screen
 ![Start](http://floatkeera.github.io/assets/PMA/start.png "Start page")
 
+### Home page
 ![Home](http://floatkeera.github.io/assets/PMA/start.png "Home page")
 
+### Product catalog
 ![Product catalog](http://floatkeera.github.io/assets/PMA/catalog.png "Product catalog")
 
+
+### Sample category with collapsing toolbar
 ![Sample category](http://floatkeera.github.io/assets/PMA/category1.png "Sample category with collapsing toolbar")

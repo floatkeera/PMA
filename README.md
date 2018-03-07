@@ -9,4 +9,4 @@ Other open-source libraries are also utilized to help with the UI/UX including A
 
 ## Prototype design
 
-Prior to making the mobile application, I designed the UI elements and prototyped them with proto.io. You can view the web version here: [a link](https://floatkeera.github.io/PMAprototype)
+Prior to making the mobile application, I designed the UI elements and prototyped them with proto.io. You can view the web version [here](https://floatkeera.github.io/PMAprototype)

@@ -109,6 +109,18 @@ public class CartActivity extends BaseActivityWithToolbar {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
 
+                // If there is nothing in the cart
+                if(!dataSnapshot.hasChildren()){
+                    showEmpty(true);
+                    cartProducts.clear();
+                    adapter.notifyDataSetChanged();
+
+                    if(lvtest.getFooterViewsCount() != 0){
+                        lvtest.removeFooterView(listFooter);
+                    }
+                }
+
+
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
 

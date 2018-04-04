@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -124,9 +125,15 @@ public class BaseActivityWithToolbar extends AppCompatActivity {
 
                 cartQty = 0;
 
+                // If nothing in the cart we hide the notification bubble
+                if(!dataSnapshot.hasChildren()){
+                    itemCartTextView.setVisibility(View.GONE);
+                }
+
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
                     UserTest test  = ds.getValue(UserTest.class);
                     if(test.cart != null) {
+                        Log.i("CART", "Cart display");
                         cartProducts = new ArrayList<CartProduct>(test.cart.values());
 
                         for (CartProduct a : cartProducts) {
@@ -138,7 +145,9 @@ public class BaseActivityWithToolbar extends AppCompatActivity {
 
                     } else {
                         itemCartTextView.setVisibility(View.GONE);
+                        Log.i("CART", "Cart gone");
                     }
+
 
 
                 }
